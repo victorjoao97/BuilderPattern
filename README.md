@@ -1,4 +1,5 @@
 # Repositório em C# para aplicar conceitos do Builder (Design Pattern)
+[![.NET](https://github.com/victorjoao97/BuilderPattern/actions/workflows/dotnet.yml/badge.svg)](https://github.com/victorjoao97/BuilderPattern/actions/workflows/dotnet.yml)  
 
 _Os requisitos para executar esse projeto é ter um ambiente .NET 7 ou utilizar o Docker_
 
