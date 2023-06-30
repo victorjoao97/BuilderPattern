@@ -1,12 +1,9 @@
-﻿using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace XUnitTest
+﻿namespace Domain.Interfaces
 {
+    public interface IBuilder<T> : IBuilder
+    {
+        T GetProduct();
+    }
     public interface IBuilder
     {
         void Reset();

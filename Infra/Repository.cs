@@ -1,15 +1,13 @@
-﻿namespace XUnitTest
+﻿using Domain;
+using Domain.Interfaces;
+
+namespace Infra
 {
     public class Repository : IRepository
     {
         public Balance Save(Product product)
         {
             return new Balance();
-        }
-
-        public Repository GetRepository()
-        {
-            return new Repository();
         }
     }
 }

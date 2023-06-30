@@ -1,4 +1,6 @@
-﻿namespace XUnitTest
+﻿using Domain.Interfaces;
+
+namespace Infra
 {
     public class DateTimeProvider : IDateTimeProvider
     {

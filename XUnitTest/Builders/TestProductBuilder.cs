@@ -1,9 +1,11 @@
-﻿using Moq;
+﻿using Data;
+using Domain.Interfaces;
+using Moq;
 using System.Linq.Expressions;
 
-namespace XUnitTest
+namespace XUnitTest.Builders
 {
-    public class TestProductBuilder : IBuilder
+    public class TestProductBuilder : IBuilder<SaveProductToRepository>
     {
         private Mock<IDateTimeProvider>? DateTimeProvider { get; set; }
         private Mock<IRepository>? Repository { get; set; }

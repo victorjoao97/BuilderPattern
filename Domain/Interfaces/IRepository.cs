@@ -1,8 +1,7 @@
-﻿namespace XUnitTest
+﻿namespace Domain.Interfaces
 {
     public interface IRepository
     {
         Balance Save(Product product);
-        Repository GetRepository();
     }
 }

@@ -1,12 +1,14 @@
+using Domain;
 using Moq;
+using XUnitTest.Builders;
 
 namespace XUnitTest
 {
-    public class TestProductUnit
+    public class ProductTestUnit
     {
         internal TestProductBuilder Builder { get; }
 
-        public TestProductUnit()
+        public ProductTestUnit()
         {
             Builder = new TestProductBuilder();
         }

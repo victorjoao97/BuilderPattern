@@ -1,4 +1,4 @@
-﻿namespace XUnitTest
+﻿namespace Domain.Interfaces
 {
     public interface IApiService
     {

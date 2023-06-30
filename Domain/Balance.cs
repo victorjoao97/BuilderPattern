@@ -1,4 +1,4 @@
-﻿namespace XUnitTest
+﻿namespace Domain
 {
     public class Balance
     {

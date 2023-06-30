@@ -1,6 +1,9 @@
-﻿namespace XUnitTest
+﻿using Domain;
+using Domain.Interfaces;
+
+namespace Data
 {
-    public class SaveProductToRepository
+    public class SaveProductToRepository : ISaveProduct
     {
         public SaveProductToRepository(IRepository? repository, IDateTimeProvider? dateTimeProvider, IApiService? apiService)
         {
