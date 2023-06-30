@@ -1,4 +1,4 @@
-# Projeto em C# para aplicar conceitos do Builder (Design Pattern)
+# Repositório em C# para aplicar conceitos do Builder (Design Pattern)
 
 _Os requisitos para executar esse projeto é ter um ambiente .NET 7_
 
