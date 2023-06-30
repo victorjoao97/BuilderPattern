@@ -13,9 +13,9 @@ namespace XUnitTest
             // ARRANGE
             var builder = new TestProductBuilder();
             ProductDirector.MakeProductToSave(builder);
-            var saveProduct = builder.GetProduct();
-
             builder.MockThrowsRepository(x => x.Save(It.IsAny<Product>()), new Exception("VISH"));
+
+            var saveProduct = builder.GetProduct();
 
             // ACT
             void act() => saveProduct.Save(It.IsAny<Product>());
@@ -42,9 +42,9 @@ namespace XUnitTest
             // ARRANGE
             var builder = new TestProductBuilder();
             ProductDirector.MakeProductToGetDateNow(builder);
-            var saveProduct = builder.GetProduct();
-
             builder.MockThrowsDateTimeProvider(x => x.Now(), new Exception("VISH"));
+
+            var saveProduct = builder.GetProduct();
 
             // ACT
             void act() => saveProduct.DateNow();
@@ -59,9 +59,9 @@ namespace XUnitTest
             // ARRANGE
             var builder = new TestProductBuilder();
             ProductDirector.MakeProductToGetDateNow(builder);
-            var saveProduct = builder.GetProduct();
-
             builder.MockReturnsDateTimeProvider(x => x.Now(), new DateTime(2023, 6, 30));
+
+            var saveProduct = builder.GetProduct();
 
             // ACT
             var now = saveProduct.DateNow();

@@ -1,4 +1,5 @@
 ﻿using Data;
+using Domain.Exceptions;
 using Domain.Interfaces;
 using Moq;
 using System.Linq.Expressions;
@@ -20,6 +21,7 @@ namespace XUnitTest.Builders
         {
             DateTimeProvider = null;
             Repository = null;
+            ApiService = null;
         }
 
         public void SetDateTimeProvider()
@@ -46,22 +48,32 @@ namespace XUnitTest.Builders
 
         public void MockThrowsDateTimeProvider(Expression<Action<IDateTimeProvider>> action, Exception exception)
         {
+            ThrowsIfMockIsNull(DateTimeProvider);
             DateTimeProvider?.Setup(action).Throws(exception);
         }
 
         public void MockThrowsRepository(Expression<Action<IRepository>> action, Exception exception)
         {
+            ThrowsIfMockIsNull(Repository);
             Repository?.Setup(action).Throws(exception);
         }
 
         public void MockReturnsDateTimeProvider<T>(Expression<Func<IDateTimeProvider, T>> action, T returns)
         {
+            ThrowsIfMockIsNull(DateTimeProvider);
             DateTimeProvider?.Setup(action).Returns(returns);
         }
 
         public void MockReturnsRepository<T>(Expression<Func<IRepository, T>> action, T returns)
         {
+            ThrowsIfMockIsNull(Repository);
             Repository?.Setup(action).Returns(returns);
+        }
+
+        private static void ThrowsIfMockIsNull<T>(T? @object)
+        {
+            if (@object is null)
+                throw new ProductWasNotBuilt($"Unable to change mock {typeof(T)} because it is null\nMake the mocks before generating the product");
         }
     }
 }
