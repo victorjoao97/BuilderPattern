@@ -1,6 +1,6 @@
 # Repositório em C# para aplicar conceitos do Builder (Design Pattern)
 
-_Os requisitos para executar esse projeto é ter um ambiente .NET 7_
+_Os requisitos para executar esse projeto é ter um ambiente .NET 7 ou utilizar o Docker_
 
 Para executar os testes execute o comando:
 ```
