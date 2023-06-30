@@ -1,5 +1,6 @@
 ﻿using ConsoleClient.Domain.Builder;
 using Domain;
+using Domain.Builders;
 
 namespace ConsoleClient
 {

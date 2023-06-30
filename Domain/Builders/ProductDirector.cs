@@ -1,6 +1,6 @@
 ﻿using Domain.Interfaces;
 
-namespace ConsoleClient.Domain.Builder
+namespace Domain.Builders
 {
     public class ProductDirector
     {
