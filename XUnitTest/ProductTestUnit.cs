@@ -19,9 +19,9 @@ namespace XUnitTest
             Builder.SetDateTimeProvider();
             Builder.SetRepository();
             Builder.MockThrowsRepository(x => x.Save(It.IsAny<Product>()), new Exception("VISH"));
-            var product = Builder.GetProduct();
+            var saveProduct = Builder.GetProduct();
 
-            void act() => product.Save(It.IsAny<Product>());
+            void act() => saveProduct.Save(It.IsAny<Product>());
             Assert.Throws<Exception>(act);
         }
 
@@ -32,9 +32,9 @@ namespace XUnitTest
             Builder.SetApiService();
             Builder.SetRepository();
             Builder.MockReturnsRepository(x => x.Save(It.IsAny<Product>()), new Balance());
-            var product = Builder.GetProduct();
+            var saveProduct = Builder.GetProduct();
 
-            product.Save(It.IsAny<Product>());
+            saveProduct.Save(It.IsAny<Product>());
         }
 
         [Fact]
@@ -43,9 +43,9 @@ namespace XUnitTest
             Builder.SetDateTimeProvider();
             Builder.MockThrowsDateTimeProvider(x => x.Now(), new Exception("VISH"));
 
-            var product = Builder.GetProduct();
+            var saveProduct = Builder.GetProduct();
 
-            void act() => product.DateNow();
+            void act() => saveProduct.DateNow();
             Assert.Throws<Exception>(act);
         }
 
@@ -55,9 +55,9 @@ namespace XUnitTest
             Builder.SetDateTimeProvider();
             Builder.MockReturnsDateTimeProvider(x => x.Now(), new DateTime(2023, 6, 30));
 
-            var product = Builder.GetProduct();
+            var saveProduct = Builder.GetProduct();
 
-            var now = product.DateNow();
+            var now = saveProduct.DateNow();
             Assert.Equal(new DateTime(2023, 6, 30), now);
         }
     }
