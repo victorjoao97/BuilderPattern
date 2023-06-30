@@ -3,7 +3,7 @@ using Domain.Interfaces;
 using Infra;
 
 namespace ConsoleClient.Domain.Builder;
-public class ProductBuilder : IBuilder<SaveProductToRepository>
+public class ProductBuilder : IBuilder<ISaveProduct>
 {
     private IDateTimeProvider? DateTimeProvider { get; set; }
     private IRepository? Repository { get; set; }
@@ -35,7 +35,7 @@ public class ProductBuilder : IBuilder<SaveProductToRepository>
         ApiService = new ApiService();
     }
 
-    public SaveProductToRepository GetProduct()
+    public ISaveProduct GetProduct()
     {
         var product = new SaveProductToRepository(Repository, DateTimeProvider, ApiService);
         Reset();

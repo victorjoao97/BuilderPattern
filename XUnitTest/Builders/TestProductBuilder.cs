@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 
 namespace XUnitTest.Builders
 {
-    public class TestProductBuilder : IBuilder<SaveProductToRepository>
+    public class TestProductBuilder : IBuilder<ISaveProduct>
     {
         private Mock<IDateTimeProvider>? DateTimeProvider { get; set; }
         private Mock<IRepository>? Repository { get; set; }
@@ -37,7 +37,7 @@ namespace XUnitTest.Builders
             ApiService = new Mock<IApiService>();
         }
 
-        public SaveProductToRepository GetProduct()
+        public ISaveProduct GetProduct()
         {
             var product = new SaveProductToRepository(Repository?.Object, DateTimeProvider?.Object, ApiService?.Object);
             Reset();
