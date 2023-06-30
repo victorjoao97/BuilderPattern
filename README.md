@@ -12,6 +12,12 @@ Para executar o console execute o comando:
 dotnet run --project .\ConsoleClient\ConsoleClient.csproj
 ```
 
+Se quiser utilizar docker, siga os passos abaixo para executar o projeto sem precisar instalar o dotnet:
+```
+docker build -t dotnet-builderpattern .
+docker run -it dotnet-builderpattern
+```
+
 O problema encontrado era utilizar uma classe que possui parâmetros no construtor que são opcionais para determinados métodos, pois quando era necessário criar testes ou utilizar a classe no Cliente, havia o trabalho que omitir parâmetros no construtor.  
 Para esse problema foi utilizado o padrão Builder por ser um padrão de projeto criacional, facilita a criação de objetos complexos permitindo que eles sejam criados passo a passo, reutiliza código e centraliza o local onde os objetos são criados.
 
